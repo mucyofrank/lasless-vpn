@@ -1,17 +1,39 @@
 *{
-    font-family: 'Rubik','Sans-serif';
     margin:20px;
+}
+body{
+  font-family: 'Rubik', sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+button{
+  cursor:pointer;
+  transition:transform 250ms ease-in-out;
+}
+button.btn12:hover{
+  transform: translateX(-7px);
+}
+button.btn22:hover{
+  transform: translateX(7px);
+}
+button:hover{
+  transform: translateY(-7px);
 }
 
 .header-items{
   display:flex;
   justify-content: space-between;
 }
-#logodescription{
-  margin-right:15px;;
+
+.logo-align{
+display: flex;
+align-items: center;
+
+
+
 }
 .links{
   justify-content: space-around;
+  margin-top: 50px;
 }
 a{
   color:black;
@@ -21,12 +43,17 @@ a{
 #signin-btn{
   border:none;
   background-color: white;
+height:40px;
+
 }
 #signup-btn{
   border:1px red solid;
   border-radius:30px;
   background-color: white;
   width:100px;
+  color:red;
+ height: 40px;
+ 
 }
 
 .textandimage1{
@@ -41,6 +68,20 @@ a{
   width:250px;
   height:55px;
   box-shadow: 0px 8px 20px rgba(255, 0, 0, 0.692);
+  animation: floatbutton 3s  ease-in-out infinite;
+}
+@keyframes floatbutton {
+  0% {
+    transform: translateY(0px);
+
+  }
+  50%{
+    transform:translateY(10px);
+  }
+ 
+  100%{
+    transform:translateY(0px);
+  }
 }
 .bottomstats{
   margin-right: auto;
@@ -53,8 +94,10 @@ a{
 box-sizing: border-box;
   display: flex;
   justify-content: space-between;
+    animation: pop  10s infinite ;
   box-shadow: 0px 8px 20px rgb(85, 68, 68,0.3);
 }
+
 .stat{
   display:flex;
 }
@@ -67,14 +110,56 @@ box-sizing: border-box;
   justify-content:center;
   gap: 30px;
 }
+.custom-list{
+  list-style: none;
+  padding:0;
+  margin:0;
+}
+.custom-list li{
+  position:relative;
+  padding-left: 30px;
+  margin-bottom: 12px;
+
+}
+.custom-list li::before{
+  content:"";
+  position: absolute;
+  left:0;
+  width:18px;
+  height:18px;
+  background-image: url(images/tick.svg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
 .price{
   border:2px solid rgb(68, 67, 67);
   border-radius: 7px;
+  display:flex;
+  flex-direction: column;
+  align-items: center;
 }
 .price1{
   border:2px solid red;
-   border-radius: 7px;
+  border-radius: 7px;
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  animation: pop  4s infinite ;
 }
+@keyframes pop{
+  0%{
+    transform: scale(1);
+  }
+  50%{
+    transform: scale(1.05);
+
+  }
+  100%{
+    transform: scale(1);
+  }
+}
+
 .textabove{
 text-align: center; 
 
@@ -157,24 +242,26 @@ text-align: center;
   justify-content: space-between;
   
 }
-.btn1{
+.btn12{
   border: 1px red solid;
   border-radius: 50%;
   background-color: white;
   align-items:center;
+  color:rgb(255, 0, 0);
   height:50%;
   width:50%;
-  color:rgb(255, 0, 0);
+ 
  
 }
-.btn2{
+.btn22{
   border: 1px red solid;
   border-radius: 50%;
   background-color:red;
-   align-items:center;
+  align-items:center;
   height:50%;
   width:50%;
   color:white;
+ 
  
 }
 .buttons-side{
@@ -198,9 +285,11 @@ box-sizing: border-box;
   border-radius: 10px;
   color:white;
   background-color: red;
-  height:60px;
+  height:50px;
   max-height:100px;
+  animation: floatbutton 3s  ease-in-out infinite;
   box-shadow:0px 9px 10px rgba(255, 0, 0, 0.392)
+  
 }
 .containerfooter{
   display:flex;
@@ -228,15 +317,17 @@ box-sizing: border-box;
   flex-direction: column;
   gap:13px;
 }
-.btn,button{
+.btn{
   border:2px  solid red;
   border-radius: 10px;
   color:red;
   background-color: white;
+  width: 120px;
 }
-.btn1,button{
+.btn1{
 border:2px  solid red;
   border-radius: 10px;
   color:rgb(236, 227, 227);
   background-color: red;
+   width: 120px;
 }
